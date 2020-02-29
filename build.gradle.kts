@@ -29,12 +29,24 @@ dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test")
 
     // Use the Kotlin JUnit integration.
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
+//    testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
 
+    testImplementation("org.junit.jupiter:junit-jupiter:5.6.0")
     testImplementation("org.assertj:assertj-core:3.15.0")
 }
 
 application {
     // Define the main class for the application.
-    mainClassName = "org.bonsai.tddskat.AppKt"
+    mainClassName = "org.b0n541.tddskat.AppKt"
+}
+
+tasks.test {
+    useJUnitPlatform()
+    testLogging {
+        events("passed", "skipped", "failed")
+    }
+}
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+    kotlinOptions.jvmTarget = "1.8"
 }

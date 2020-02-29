@@ -1,13 +1,13 @@
-package org.bonsai.tddskat.rule
+package org.b0n541.tddskat.rule
 
 import org.assertj.core.api.Assertions.assertThat
-import org.bonsai.tddskat.Skat
-import org.bonsai.tddskat.SkatGame
-import org.bonsai.tddskat.SkatPlayer
-import org.junit.Test
+import org.b0n541.tddskat.Skat
+import org.b0n541.tddskat.SkatGame
+import org.b0n541.tddskat.SkatPlayer
+import org.junit.jupiter.api.Test
 
 
-class OverviewTest {
+class SkatTest {
 
     @Test
     fun `Skat is played by three or more players`() {

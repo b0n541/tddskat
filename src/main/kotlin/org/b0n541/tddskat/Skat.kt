@@ -1,4 +1,4 @@
-package org.bonsai.tddskat
+package org.b0n541.tddskat
 
 data class Skat(val players: List<SkatPlayer>) {
     init {
