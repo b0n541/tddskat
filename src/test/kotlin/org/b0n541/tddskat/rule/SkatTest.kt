@@ -5,6 +5,7 @@ import org.b0n541.tddskat.Skat
 import org.b0n541.tddskat.SkatGame
 import org.b0n541.tddskat.SkatPlayer
 import org.junit.jupiter.api.Test
+import kotlin.test.assertFailsWith
 
 
 class SkatTest {
@@ -17,6 +18,8 @@ class SkatTest {
         val skatWithFivePlayers = Skat(listOf(SkatPlayer("Klaus"), SkatPlayer("Lutz"), SkatPlayer("Fritz"),
                 SkatPlayer("Paul"), SkatPlayer("Hans")))
         assertThat(skatWithFivePlayers.players).hasSize(5)
+
+        assertFailsWith<IllegalArgumentException> { Skat(listOf(SkatPlayer("Klaus"), SkatPlayer("Lutz"))) }
     }
 
     @Test
