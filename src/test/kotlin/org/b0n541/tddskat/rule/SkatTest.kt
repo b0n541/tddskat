@@ -11,7 +11,7 @@ import kotlin.test.assertFailsWith
 class SkatTest {
 
     @Test
-    fun `Skat is played by three or more players`() {
+    fun `Rule 1 1 1 Skat is played by three or more players`() {
         val skatWithThreePlayers = Skat(listOf(SkatPlayer("Klaus"), SkatPlayer("Lutz"), SkatPlayer("Fritz")))
         assertThat(skatWithThreePlayers.players).hasSize(3)
 
@@ -23,7 +23,7 @@ class SkatTest {
     }
 
     @Test
-    fun `Skat game is played by declarer against two defenders`() {
+    fun `Rule 1 1 2 A single Skat game is played by declarer against two defenders`() {
         val game = SkatGame(listOf(SkatPlayer("Declarer"), SkatPlayer("Defender"), SkatPlayer("Defender")))
         assertThat(game.players).hasSize(3)
         assertThat(game.getDeclarer()).isEqualTo(SkatPlayer("Declarer"))

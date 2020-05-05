@@ -13,12 +13,12 @@ class DeckTest {
     val deck = Deck()
 
     @Test
-    fun `Deck consists of 32 cards`() {
+    fun `Rule 1 2 1 - Deck consists of 32 cards`() {
         assertThat(deck.cards).hasSize(32)
     }
 
     @Test
-    fun `Deck consists of four suits`() {
+    fun `Rule 1 2 1 - Deck consists of four suits`() {
         assertThat(
                 deck.cards.stream()
                         .map { card -> card.suit }
@@ -27,7 +27,7 @@ class DeckTest {
     }
 
     @Test
-    fun `Suits are ranked high to low in the order CLUBS, SPADES, HEARTS to DIAMONDS`() {
+    fun `Rule 1 2 1 - Suits are ranked high to low in the order CLUBS, SPADES, HEARTS to DIAMONDS`() {
         assertThat(
                 deck.cards.stream()
                         .map { card -> card.suit }
