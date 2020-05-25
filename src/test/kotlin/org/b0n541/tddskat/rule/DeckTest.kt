@@ -42,7 +42,7 @@ class DeckTest {
 
     @ParameterizedTest
     @MethodSource("cardValues")
-    fun `Cards in each suit have the following values`(data: CardValue) {
+    fun `Rule 1 2 2 - Cards in each suit have the following values`(data: CardValue) {
         assertThat(data.card.rank.value).isEqualTo(data.expectedValue)
     }
 
