@@ -37,6 +37,7 @@ class SkatGame(val forehand: SkatPlayer, val middlehand: SkatPlayer, val rearhan
      * Pick up Skat cards.
      */
     fun pickUpSkat() {
+        // TODO: Check game phase - should only be possible after bidding and before game contract announcement
         pickUpSkat = true
     }
 
@@ -54,6 +55,7 @@ class SkatGame(val forehand: SkatPlayer, val middlehand: SkatPlayer, val rearhan
      * @throws IllegalStateException
      */
     fun announceGameContract(gameType: GameType, hand: Boolean) {
+        // TODO: Check game phase - should only be possible after bidding/pick up skat and trick play
         if (pickUpSkat && hand) {
             throw IllegalStateException("Skat was already picked up. No hand game possible anymore.")
         }

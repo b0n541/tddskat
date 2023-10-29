@@ -20,13 +20,13 @@ repositories {
 
 dependencies {
     // Use the Kotlin JUnit 5 integration.
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit5:1.9.10")
 
     // Use the JUnit 5 integration.
     testImplementation("org.junit.jupiter:junit-jupiter-engine:5.10.0")
     testImplementation("org.junit.jupiter:junit-jupiter-params:5.10.0")
 
-    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher:1.10.0")
 
     // https://mvnrepository.com/artifact/org.assertj/assertj-core
     testImplementation("org.assertj:assertj-core:3.24.2")

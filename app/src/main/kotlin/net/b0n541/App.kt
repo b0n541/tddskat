@@ -7,7 +7,7 @@ import net.b0n541.skat.SkatPlayer
 import net.b0n541.skat.SkatTable
 
 fun main() {
-    var table = SkatTable(listOf(SkatPlayer("Player One"), SkatPlayer("Player Two"), SkatPlayer("Player Three")))
+    val table = SkatTable(listOf(SkatPlayer("Player One"), SkatPlayer("Player Two"), SkatPlayer("Player Three")))
 
-    var game = table.newGame()
+    val game = table.newGame()
 }
