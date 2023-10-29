@@ -11,7 +11,8 @@ import kotlin.test.Test
  * "the laid away".
  */
 class Rule_1_1_3_Test {
-    @Test fun `Two cards laid face down, separately - called Skat gave the game its name`() {
+    @Test
+    fun `Two cards laid face down, separately - called Skat gave the game its name`() {
         val game = SkatGame(SkatPlayer("One"), SkatPlayer("Two"), SkatPlayer("Three"))
 
         assertThat(game.skat).isEqualTo(Pair(Card.CJ, Card.SJ))
