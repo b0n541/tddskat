@@ -1,5 +1,10 @@
 package net.b0n541.skat
 
+/**
+ * Skat table
+ *
+ * @param initialPlayer Initial player
+ */
 class SkatTable(initialPlayer: List<SkatPlayer>) {
 
     private val player: MutableList<SkatPlayer> = initialPlayer.toMutableList()

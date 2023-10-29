@@ -1,5 +1,10 @@
 package net.b0n541.skat
 
+/**
+ * Card
+ *
+ * @param suit Suit
+ */
 enum class Card(val suit: Suit) {
     CA(Suit.CLUBS),
     CK(Suit.CLUBS),
