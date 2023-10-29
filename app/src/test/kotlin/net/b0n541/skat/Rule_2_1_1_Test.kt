@@ -38,10 +38,10 @@ class Rule_2_1_1_Test {
         assertThat(game.getGameType()).isNull()
         assertThat(game.isHand()).isTrue()
 
-        game.announceGameContract(gameType, true)
+        game.announceGameContract(gameType, true, false)
         assertThat(game.getGameType()).isEqualTo(gameType)
 
-        assertThatThrownBy { game.announceGameContract(gameType, false) }
+        assertThatThrownBy { game.announceGameContract(gameType, false, false) }
             .isInstanceOf(IllegalStateException::class.java)
             .hasMessage("Skat was not picked up. Game must be a hand game.")
 
@@ -49,10 +49,10 @@ class Rule_2_1_1_Test {
 
         assertThat(game.isHand()).isFalse()
 
-        game.announceGameContract(gameType, false)
+        game.announceGameContract(gameType, false, false)
         assertThat(game.getGameType()).isEqualTo(gameType)
 
-        assertThatThrownBy { game.announceGameContract(gameType, true) }
+        assertThatThrownBy { game.announceGameContract(gameType, true, false) }
             .isInstanceOf(IllegalStateException::class.java)
             .hasMessage("Skat was already picked up. No hand game possible anymore.")
     }

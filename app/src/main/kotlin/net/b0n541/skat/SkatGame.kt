@@ -4,6 +4,7 @@ class SkatGame(val forehand: SkatPlayer, val middlehand: SkatPlayer, val rearhan
 
     private var pickUpSkat = false
     private var gameType: GameType? = null
+    private var ouvert = false
 
     /**
      * Declarer player
@@ -49,12 +50,19 @@ class SkatGame(val forehand: SkatPlayer, val middlehand: SkatPlayer, val rearhan
     fun getGameType() = gameType
 
     /**
+     * Checks whether the game is an ouvert game.
+     *
+     * @return TRUE, if the game is an ouvert game
+     */
+    fun isOuvert() = ouvert
+
+    /**
      * Announce game contract.
      *
      * @param gameType Game type
      * @throws IllegalStateException
      */
-    fun announceGameContract(gameType: GameType, hand: Boolean) {
+    fun announceGameContract(gameType: GameType, hand: Boolean, ouvert: Boolean) {
         // TODO: Check game phase - should only be possible after bidding/pick up skat and trick play
         if (pickUpSkat && hand) {
             throw IllegalStateException("Skat was already picked up. No hand game possible anymore.")
@@ -62,6 +70,11 @@ class SkatGame(val forehand: SkatPlayer, val middlehand: SkatPlayer, val rearhan
         if (!pickUpSkat && !hand) {
             throw IllegalStateException("Skat was not picked up. Game must be a hand game.")
         }
+        if (GameType.NULL != gameType && pickUpSkat && ouvert) {
+            throw IllegalStateException("Ouvert is only allowed in hand games.")
+        }
+
         this.gameType = gameType
+        this.ouvert = ouvert
     }
 }
