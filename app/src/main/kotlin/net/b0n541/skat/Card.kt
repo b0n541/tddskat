@@ -1,7 +1,7 @@
 package net.b0n541.skat
 
 /**
- * Card
+ * Card.
  *
  * @param suit Suit
  */
@@ -40,6 +40,9 @@ enum class Card(val suit: Suit) {
     D7(Suit.DIAMONDS)
 }
 
+/**
+ * Suit of a card.
+ */
 enum class Suit {
     CLUBS,
     SPADES,
