@@ -5,7 +5,7 @@ import org.assertj.core.api.Assertions.assertThatThrownBy
 import kotlin.test.Test
 
 /**
- * Rule 1.1.1:
+ * Rule 1.1.1
  *
  * The Skat game is a card game for three or more people.
  * The single game is played by one player and two opponents.
@@ -47,11 +47,11 @@ class Rule_1_1_1_Test {
 
     @Test
     fun `The single game is played by one player and two opponents`() {
-        var game = SkatGame(PLAYER_ONE, PLAYER_TWO, PLAYER_THREE)
+        val game = SkatGame(PLAYER_ONE, PLAYER_TWO, PLAYER_THREE)
 
         assertGamePlayerNames(game)
         assertThat(game.declarer).isEqualTo(PLAYER_ONE)
-        assertThat(game.opponents).containsExactly(PLAYER_TWO, PLAYER_THREE)
+        assertThat(game.opponents).containsExactlyInAnyOrder(PLAYER_TWO, PLAYER_THREE)
     }
 
     private fun assertGamePlayerNames(game: SkatGame) {
