@@ -4,40 +4,41 @@ package net.b0n541.skat
  * Card.
  *
  * @param suit Suit
+ * @param rank Rank
  */
-enum class Card(val suit: Suit) {
-    CA(Suit.CLUBS),
-    CK(Suit.CLUBS),
-    CQ(Suit.CLUBS),
-    CJ(Suit.CLUBS),
-    CT(Suit.CLUBS),
-    C9(Suit.CLUBS),
-    C8(Suit.CLUBS),
-    C7(Suit.CLUBS),
-    SA(Suit.SPADES),
-    SK(Suit.SPADES),
-    SQ(Suit.SPADES),
-    SJ(Suit.SPADES),
-    ST(Suit.SPADES),
-    S9(Suit.SPADES),
-    S8(Suit.SPADES),
-    S7(Suit.SPADES),
-    HA(Suit.HEARTS),
-    HK(Suit.HEARTS),
-    HQ(Suit.HEARTS),
-    HJ(Suit.HEARTS),
-    HT(Suit.HEARTS),
-    H9(Suit.HEARTS),
-    H8(Suit.HEARTS),
-    H7(Suit.HEARTS),
-    DA(Suit.DIAMONDS),
-    DK(Suit.DIAMONDS),
-    DQ(Suit.DIAMONDS),
-    DJ(Suit.DIAMONDS),
-    DT(Suit.DIAMONDS),
-    D9(Suit.DIAMONDS),
-    D8(Suit.DIAMONDS),
-    D7(Suit.DIAMONDS)
+enum class Card(val suit: Suit, val rank: Rank) {
+    CA(Suit.CLUBS, Rank.ACE),
+    CK(Suit.CLUBS, Rank.KING),
+    CQ(Suit.CLUBS, Rank.QUEEN),
+    CJ(Suit.CLUBS, Rank.JACK),
+    CT(Suit.CLUBS, Rank.TEN),
+    C9(Suit.CLUBS, Rank.NINE),
+    C8(Suit.CLUBS, Rank.EIGHT),
+    C7(Suit.CLUBS, Rank.SEVEN),
+    SA(Suit.SPADES, Rank.ACE),
+    SK(Suit.SPADES, Rank.KING),
+    SQ(Suit.SPADES, Rank.QUEEN),
+    SJ(Suit.SPADES, Rank.JACK),
+    ST(Suit.SPADES, Rank.TEN),
+    S9(Suit.SPADES, Rank.NINE),
+    S8(Suit.SPADES, Rank.EIGHT),
+    S7(Suit.SPADES, Rank.SEVEN),
+    HA(Suit.HEARTS, Rank.ACE),
+    HK(Suit.HEARTS, Rank.KING),
+    HQ(Suit.HEARTS, Rank.QUEEN),
+    HJ(Suit.HEARTS, Rank.JACK),
+    HT(Suit.HEARTS, Rank.TEN),
+    H9(Suit.HEARTS, Rank.NINE),
+    H8(Suit.HEARTS, Rank.EIGHT),
+    H7(Suit.HEARTS, Rank.SEVEN),
+    DA(Suit.DIAMONDS, Rank.ACE),
+    DK(Suit.DIAMONDS, Rank.KING),
+    DQ(Suit.DIAMONDS, Rank.QUEEN),
+    DJ(Suit.DIAMONDS, Rank.JACK),
+    DT(Suit.DIAMONDS, Rank.TEN),
+    D9(Suit.DIAMONDS, Rank.NINE),
+    D8(Suit.DIAMONDS, Rank.EIGHT),
+    D7(Suit.DIAMONDS, Rank.SEVEN)
 }
 
 /**
@@ -48,4 +49,20 @@ enum class Suit {
     SPADES,
     HEARTS,
     DIAMONDS
+}
+
+/**
+ * Rank of a card.
+ *
+ * @param value Rank value
+ */
+enum class Rank(val value: Int = 0) {
+    ACE(11),
+    TEN(10),
+    KING(4),
+    QUEEN(3),
+    JACK(2),
+    NINE,
+    EIGHT,
+    SEVEN;
 }
