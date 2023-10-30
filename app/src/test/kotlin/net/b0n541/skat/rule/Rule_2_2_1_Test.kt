@@ -1,5 +1,6 @@
-package net.b0n541.skat
+package net.b0n541.skat.rule
 
+import net.b0n541.skat.*
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.params.ParameterizedTest
@@ -49,7 +50,7 @@ class Rule_2_2_1_Test {
             val trumpSuit = Suit.valueOf(gameType.name)
 
             assertThat(SuitRules.equal(game, trumpSuit, trumpSuit)).isTrue()
-            
+
             Suit.entries.minus(trumpSuit).forEach { nonTrumpSuit ->
                 Suit.entries.minus(setOf(trumpSuit, nonTrumpSuit)).forEach { otherNonTrumpSuit ->
                     assertThat(SuitRules.equal(game, nonTrumpSuit, otherNonTrumpSuit)).isTrue()

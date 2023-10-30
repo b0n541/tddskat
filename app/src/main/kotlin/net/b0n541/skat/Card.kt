@@ -44,11 +44,11 @@ enum class Card(val suit: Suit, val rank: Rank) {
 /**
  * Suit of a card.
  */
-enum class Suit {
-    CLUBS,
-    SPADES,
-    HEARTS,
-    DIAMONDS
+enum class Suit(val order: Int) {
+    CLUBS(1),
+    SPADES(2),
+    HEARTS(3),
+    DIAMONDS(4);
 }
 
 /**
@@ -56,13 +56,13 @@ enum class Suit {
  *
  * @param value Rank value
  */
-enum class Rank(val value: Int = 0) {
-    ACE(11),
-    TEN(10),
-    KING(4),
-    QUEEN(3),
-    JACK(2),
-    NINE,
-    EIGHT,
-    SEVEN;
+enum class Rank(val value: Int = 0, val suitGameOrder: Int) {
+    ACE(11, 2),
+    TEN(10, 3),
+    KING(4, 4),
+    QUEEN(3, 5),
+    JACK(2, 1),
+    NINE(suitGameOrder = 6),
+    EIGHT(suitGameOrder = 7),
+    SEVEN(suitGameOrder = 8);
 }

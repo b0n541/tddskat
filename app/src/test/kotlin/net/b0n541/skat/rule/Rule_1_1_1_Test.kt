@@ -1,5 +1,8 @@
-package net.b0n541.skat
+package net.b0n541.skat.rule
 
+import net.b0n541.skat.SkatGame
+import net.b0n541.skat.SkatPlayer
+import net.b0n541.skat.SkatTable
 import org.assertj.core.api.Assertions.assertThat
 import org.assertj.core.api.Assertions.assertThatThrownBy
 import kotlin.test.Test

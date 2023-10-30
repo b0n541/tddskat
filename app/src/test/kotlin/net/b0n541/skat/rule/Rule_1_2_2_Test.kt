@@ -1,5 +1,9 @@
-package net.b0n541.skat
+package net.b0n541.skat.rule
 
+import net.b0n541.skat.Card
+import net.b0n541.skat.CardDeck
+import net.b0n541.skat.Rank
+import net.b0n541.skat.Suit
 import org.assertj.core.api.Assertions.assertThat
 import kotlin.test.Test
 
