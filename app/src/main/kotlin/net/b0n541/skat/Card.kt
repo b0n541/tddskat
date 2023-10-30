@@ -38,7 +38,7 @@ enum class Card(val suit: Suit, val rank: Rank) {
     DT(Suit.DIAMONDS, Rank.TEN),
     D9(Suit.DIAMONDS, Rank.NINE),
     D8(Suit.DIAMONDS, Rank.EIGHT),
-    D7(Suit.DIAMONDS, Rank.SEVEN)
+    D7(Suit.DIAMONDS, Rank.SEVEN);
 }
 
 /**

@@ -77,4 +77,14 @@ class SkatGame(val forehand: SkatPlayer, val middlehand: SkatPlayer, val rearhan
         this.gameType = gameType
         this.ouvert = ouvert
     }
+
+    fun getTrumpSuit(): Suit? {
+        return when (gameType) {
+            GameType.CLUBS -> Suit.CLUBS
+            GameType.SPADES -> Suit.SPADES
+            GameType.HEARTS -> Suit.HEARTS
+            GameType.DIAMONDS -> Suit.DIAMONDS
+            else -> null
+        }
+    }
 }
