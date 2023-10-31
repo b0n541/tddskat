@@ -46,15 +46,13 @@ class Rule_2_2_1_Test {
     fun `The other colors are then equal in rank`(gameType: GameType) {
         game.announceGameContract(gameType, true, false)
 
-        if (setOf(GameType.CLUBS, GameType.SPADES, GameType.HEARTS, GameType.DIAMONDS).contains(gameType)) {
-            val trumpSuit = Suit.valueOf(gameType.name)
+        val trumpSuit = Suit.valueOf(gameType.name)
 
-            assertThat(SuitRules.equal(game, trumpSuit, trumpSuit)).isTrue()
+        assertThat(SuitRules.equal(game, trumpSuit, trumpSuit)).isTrue()
 
-            Suit.entries.minus(trumpSuit).forEach { nonTrumpSuit ->
-                Suit.entries.minus(setOf(trumpSuit, nonTrumpSuit)).forEach { otherNonTrumpSuit ->
-                    assertThat(SuitRules.equal(game, nonTrumpSuit, otherNonTrumpSuit)).isTrue()
-                }
+        Suit.entries.minus(trumpSuit).forEach { nonTrumpSuit ->
+            Suit.entries.minus(setOf(trumpSuit, nonTrumpSuit)).forEach { otherNonTrumpSuit ->
+                assertThat(SuitRules.equal(game, nonTrumpSuit, otherNonTrumpSuit)).isTrue()
             }
         }
     }
